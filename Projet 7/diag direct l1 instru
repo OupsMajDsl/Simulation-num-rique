@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Oct 27 16:20:02 2018
+
+@author: mathieu
+"""
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+r500 = [0,-1,-1,-1.1,-1.2,-1.2,-1.33,-1.8,-2,-2.33,-3.3,-3.5,-4,-4.3,-4.5,-4.8,-5,-4.8,-5]
+r8000 = [0,-0.83,-2.14,-4.44,-7.6,-9.23,-11.3,-12.53,-14,-17.9,-20,-20,-20.8,-21.3,-21.74,-21.95,-22.7,-22.8,-23.8]
+r_6= [-6 for i in range(len(r500))]
+theta1 = np.arange(0,181,10)
+theta2= np.arange(0,-181,-10)
+
+fig=plt.figure(figsize=(10,10))
+ax = plt.subplot(111, polar=True)
+ax.set_theta_zero_location('N')
+ax.set_theta_direction('clockwise')
+
+plt.plot(np.deg2rad(theta1),r500,'b')
+plt.plot(np.deg2rad(theta2), r500,'b',label='500Hz')
+
+plt.plot(np.deg2rad(theta1),r8000,'r')
+plt.plot(np.deg2rad(theta2),r8000,'r',label='8000Hz')
+
+plt.plot(np.deg2rad(theta1),r_6,'k',np.deg2rad(theta2), r_6,'k')
+
+ax.set_ylim(-25,0)
+ax.set_yticks(np.array([-20,-15,-10,-5,0]))
+ax.set_xticks(np.arange(0,360,30)/180*np.pi)
+ax.set_rlabel_position(0)
+plt.legend()
+plt.show()

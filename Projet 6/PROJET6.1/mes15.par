@@ -1,0 +1,11 @@
+ACQUISITION DE LA REPONSE A UN SINUS GLISSANT
+- - - - - - - - - - - - - -
+Wed 23/Mar/2005 15:59:07
+- - - - - - - - - - - - - -
+Balayage :          Linéaire
+Tps d'intégration : 10 s
+Fmin :              20 Hz
+Fmax :              1000 Hz
+Pts / Sweep :       300
+Niveau source :     500 mV
+Fichier données :   mes15.dat
