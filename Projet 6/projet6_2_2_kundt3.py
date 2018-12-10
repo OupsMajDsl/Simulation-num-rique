@@ -38,8 +38,8 @@ for k_file in range(1, nb_file + 1):
     imag        = data[indice, 1]
     mod.append(np.sqrt(real**2 + imag**2))
     phas.append(np.arctan2(imag, real))
-    
-    
+
+ 
 #ajustement théorique 
 x = pos
 f = elt
