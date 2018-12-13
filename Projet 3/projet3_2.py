@@ -1,25 +1,17 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Oct 19 18:18:24 2018
-
-@author: mathieu
-"""
 import numpy as np
 import matplotlib.pyplot as plt
 
-fig, ax = plt.subplots(3, 2, figsize = (15, 5))
+fig, ax = plt.subplots(3, 2, figsize = (20, 5))
 plt.subplots_adjust(wspace = 0.4, hspace = 0.4)
 
 theta  = np.linspace(np.pi, 3*np.pi, 1000)
 theta4 = np.linspace(1, 3, 1000)
 f_4    = np.sin(2* np.pi* theta4)
-ax[0, 0].plot(theta, -1* np.sin(-theta), 'k')
+ax[0, 0].plot(theta, -1* np.sin(-1* theta), 'k')
 ax[0, 1].plot(theta, np.sin(2* theta), 'k')
 
 ax[1, 0].plot(theta4, f_4, 'k')
 ax[1, 1].plot(theta4, np.abs(f_4), 'k')
-ax[1, 1].plot(theta4, np.abs(f_4), 'k--')
 ax[2, 0].axvline(x = 1, color = 'k')
 ax[2, 0].plot([0, 1], [0, 1], 'k', [1, 2, 3], [0, 0, 0], 'k')
 ax[2, 1].axvline(x = 1.5, color = 'k')

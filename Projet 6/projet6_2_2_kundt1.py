@@ -1,14 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Nov 25 00:14:28 2018
-
-@author: mathieu
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
-
 
 freq    = 1000
 nb_file = 50

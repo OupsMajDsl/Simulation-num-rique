@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 25 11:16:07 2018
-
-@author: mathieu
-"""
-
 from string import ascii_lowercase
 import unidecode
 

@@ -1,16 +1,7 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Oct 19 18:18:24 2018
-
-@author: mathieu
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 plt.rcParams['font.size'] = 11
 plt.rcParams['font.family'] = 'serif'
-
 
 A       = 1
 x       = np.linspace(0, 1, 1000)
@@ -21,7 +12,6 @@ c       = 340
 k       = w/c
 t_var   = np.linspace(0, T, 16)
 fig, ax = plt.subplots(2, 1)
-
 
 for t in t_var:
     ax[0].plot(x, A* np.cos(w* t - k* x), 'k-')
@@ -39,6 +29,5 @@ ax[0].set_ylabel(r"$P_p(x)$")
 ax[1].set_ylabel(r"$P_s(x)$")
 ax[0].set_xticklabels([])
 ax[1].set_xticklabels([r"$0$", r"$L/4$", r"$L/2$", r"$3L/4$", r"$L$"])
-
 
 plt.show()

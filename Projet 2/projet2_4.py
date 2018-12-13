@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Nov  7 20:27:25 2018
-
-@author: mathieu
-"""
-
 from string import ascii_lowercase
 from unidecode import unidecode
 import projet2_1 as rand_gen
@@ -92,9 +84,6 @@ class Vernam2: #vernam2.0
         msg = ''.join(char[i] for i in range(len(char)))
         return msg
         
-
-        
-                        
         
 if __name__ == "__main__":
     test = Vernam2('ibchntmaqf')

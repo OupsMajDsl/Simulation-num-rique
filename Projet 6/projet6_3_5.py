@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Nov  4 20:01:04 2018
-
-@author: mathieu
-"""
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io import wavfile

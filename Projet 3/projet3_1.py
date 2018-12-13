@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Oct 19 17:28:18 2018
-
-@author: mathieu
-"""
-
 import matplotlib.pyplot as plt
 import numpy as np
 plt.rcParams['font.family'] = 'serif'

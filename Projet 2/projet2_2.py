@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Oct 18 10:38:34 2018
-
-@author: mathieu
-"""
-
 #def arabic2roman(nb):
 #    numbers = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000]
 #    numbers = numbers[::-1]
@@ -46,6 +38,7 @@ def roman2arabic(roman):
 
 if __name__ == "__main__":
     print(arabic2roman(4999))
+    print(roman2arabic('MMMMCMXCIX'))
     print(roman2arabic('MMDXCVII'))
     print(roman2arabic('MMMMMDXCVII'))
     print(roman2arabic('CMXCIX'))

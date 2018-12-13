@@ -1,9 +1,3 @@
-éé5é#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Oct 27 15:31:34 2018
-@author: mathieu
-"""
 import numpy as np
 import matplotlib.pyplot as plt 
 
@@ -48,7 +42,7 @@ for choix in range(1, 6):
     if choix == 1:
         ax.fill_between(theta, np.full_like(theta, -8), rho, color = 'r', alpha = 0.2)
     else:
-     ax.fill_between(theta, min(rho), rho, color = 'r', alpha = 0.2)
+        ax.fill_between(theta, min(rho), rho, color = 'r', alpha = 0.2)
     ax.grid(True)
     ax.set_ylim(top = 0)
     ax.set_title("Diagramme de directivité de type {}".format(diag))

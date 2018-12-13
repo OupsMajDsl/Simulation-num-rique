@@ -1,14 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Nov 25 00:14:28 2018
-
-@author: mathieu
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
-
 
 freq    = 1000
 nb_file = 50
@@ -23,6 +14,7 @@ def find_nearest(array, value):         #https://stackoverflow.com/questions/256
     array = np.asarray(array)
     idx = (np.abs(array - value)).argmin()
     return array[idx]
+
 elt = find_nearest(fq, freq)
 for i in range(lg_file):
     if elt == fq[i]:
