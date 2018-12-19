@@ -5,7 +5,7 @@ plt.rcParams['font.family'] = 'serif'
 
 fig, ax = plt.subplots()
 lines   = []
-t       = np.linspace(0, 1, 1000)
+t       = np.linspace(0, 1, 200)
 f_var   = np.arange(0, 25, 0.1)
 
 for f in f_var:
@@ -19,6 +19,6 @@ ax.set_xticks([0, 0.5, 1])
 ax.set_xticklabels([r"$0$", r"$t/2$", r"$t$"])
 ax.grid()    
 
-ani = animation.ArtistAnimation(fig, lines, interval = 200, blit = True)
+ani = animation.ArtistAnimation(fig, lines, interval = 50, blit = True)
 
 plt.show()

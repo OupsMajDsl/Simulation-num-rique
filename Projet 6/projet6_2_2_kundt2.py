@@ -13,12 +13,9 @@ pos     = [0.01]
 def find_nearest(array, value):         #https://stackoverflow.com/questions/2566412/find-nearest-value-in-numpy-array
     array = np.asarray(array)
     idx = (np.abs(array - value)).argmin()
-    return array[idx]
+    return idx
 
-elt = find_nearest(fq, freq)
-for i in range(lg_file):
-    if elt == fq[i]:
-        indice = i
+indice = find_nearest(fq, freq)
         
 #[row, col]
 for k_file in range(1, nb_file + 1):
@@ -34,7 +31,7 @@ for k_file in range(1, nb_file + 1):
     
 #ajustement théorique 
 x = pos
-f = elt
+f = fq[indice]
 c_0 = 344
 w   = 2*np.pi*f
 k   = w/c_0
@@ -50,7 +47,7 @@ ax[1].plot(pos, phas, 'o-', label = 'Mesure')
 
 ax[0].plot(pos, p_th, label = 'Théorie')
 
-ax[0].set_title("Pression pour le matériau kundt2 à la fréquence {:.2f} Hz".format(elt))
+ax[0].set_title("Pression pour le matériau kundt2 à la fréquence {:.2f} Hz".format(fq[indice]))
 ax[0].set_ylabel('Amplitude')
 ax[1].set_ylabel('Phase')
 ax[1].set_xlabel('Position [m]')

@@ -7,7 +7,6 @@ lg_file    = len(np.loadtxt("Projet 6/PROJET6.2/kundt3/kundt1.txt")[:, 0])
 data       = np.zeros((2, lg_file))
 fq         = np.arange(0, lg_file*delta_f, delta_f)
 
-
 for i in range(2):
     file = np.loadtxt("Projet 6/PROJET6.2/kundt3/kundt{}.txt".format( str(int((dist_data[i]/2)+1)) ))
     real = file[:, 0]

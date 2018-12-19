@@ -30,7 +30,7 @@ for j in range(2):
         ax[2, j].set_yticklabels([r"$0$", r"$A/2$", r"$A$"])
         ax[2, j].axis([0, 2, 0 , 1])
         
-#plots sur plusieurs figures
+        #plots sur plusieurs figures
         ax[1, j].plot([-1, 1], [0, 0], 'k', [3, 4], [0, 0], 'k')
         ax[0, j].plot([-np.pi, np.pi], [0, 0], 'k', [3* np.pi, 4* np.pi], [0, 0], 'k')
 

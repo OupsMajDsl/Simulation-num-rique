@@ -50,6 +50,5 @@ for col in range(3):
     ax[0, col].set_title('Spectre (superposition des {} fichiers)'.format(nb_file))
 ax[0, 2].set_title('Ecart-type relatif en %')
 
-
 plt.tight_layout()
 plt.show()
