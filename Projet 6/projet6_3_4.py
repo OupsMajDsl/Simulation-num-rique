@@ -9,6 +9,7 @@ def find_nearest(array, value):         #https://stackoverflow.com/questions/256
     array = np.asarray(array)
     idx = (np.abs(array - value)).argmin()
     return array[idx]
+
 #five --> 5.6 - 6.4
 debut = find_nearest(t1, 5.6)
 fin   = find_nearest(t1, 6.4)
@@ -30,7 +31,6 @@ print(len(dat))
 wavfile.write('Projet 6/PROJET6.3/fivefive.wav', 44100, np.asarray(five))
 
 t_five = np.linspace(0, len(five)/rate, len(five))
-
 fig, ax = plt.subplots()
 ax.plot(t_five, five)
 ax.grid(True)

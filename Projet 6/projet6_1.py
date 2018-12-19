@@ -5,6 +5,7 @@ nb_file = 19
 lg_file = len(np.loadtxt("Projet 6/PROJET6.1/mes1.dat")[:, 0])
 ampl    = np.zeros((nb_file, lg_file))
 phas    = np.zeros((nb_file, lg_file))
+fig, ax = plt.subplots(2, 3, figsize = (25, 15))
 
 for k_file in range(1, nb_file + 1):
     filename         = "Projet 6/PROJET6.1/mes{}.dat".format(k_file)
@@ -16,29 +17,39 @@ for k_file in range(1, nb_file + 1):
     if k_file == 1:
         fq = file_load[:, 0]
 
-fig, ax = plt.subplots(2, 1)            #tracé linéaire
 for i in range(len(ampl[:, 0])):
-    ax[0].plot(fq, ampl[i], alpha = 0.3)
-    ax[1].plot(fq, phas[i], alpha = 0.3)
-plt.show()
-    
-fig, ax = plt.subplots(2, 1)            #tracé db + phase déroulée
-for i in range(len(ampl[:, 0])):
+    col = 0                                             #tracé linéaire    
+    ax[0, col].plot(fq, ampl[i], alpha = 0.3)
+    ax[0, col].set_ylabel('Amplitude linéaire')
+    ax[1, col].plot(fq, phas[i], alpha = 0.3)
+    ax[1, col].set_ylabel('Phase en radian')
+
+    col = 1                                             #tracé db + phase déroulée
     ampl_db = 20* np.log10(ampl[i])
-    ax[0].plot(fq, ampl_db)
-    ax[1].plot(fq, np.unwrap(phas[i]))
-plt.show()
+    ax[0, col].plot(fq, ampl_db)
+    ax[0, col].set_ylabel('Amplitude (dB)')
+    ax[1, col].plot(fq, np.unwrap(phas[i]))
+    ax[1, col].set_ylabel('Phase déroulée en radian')
 
-fig, ax = plt.subplots(2, 1)            #tracé écart-type
-std_ampl = []
+std_ampl = []                                           #tracé écart-type
 std_phas = []
+col      = 2
 for i in range(lg_file):
-    std_ampl.append( ((np.std(ampl[:, i])) /np.mean(ampl[:, i])* 100))
-    std_phas.append( np.abs((np.std(phas[:, i]))/np.mean(phas[:, i])* 100))
-ax[0].plot(fq, std_ampl)
-ax[0].axis([0, 1000, 0, 30])
-ax[0].set_title('Ecart-type relatif en %')
-ax[1].plot(fq, std_phas)
-ax[1].axis([0, 1000, 0, 100])
+    std_ampl.append(np.abs((np.std(ampl[:, i]))/np.mean(ampl[:, i])* 100))
+    std_phas.append(np.abs((np.std(phas[:, i]))/np.mean(phas[:, i])* 100))
+ax[0, col].plot(fq, std_ampl)
+ax[0, col].axis([0, 1000, 0, 30])
+ax[0, col].set_ylabel('Amplitude')
+ax[1, col].plot(fq, std_phas)
+ax[1, col].axis([0, 1000, 0, 100])
+ax[0, col].set_ylabel('Phase')
 
+for col in range(3):
+    ax[0, col].set_xticklabels([])
+    ax[1, col].set_xlabel('Fréquence (Hz)')
+    ax[0, col].set_title('Spectre (superposition des {} fichiers)'.format(nb_file))
+ax[0, 2].set_title('Ecart-type relatif en %')
+
+
+plt.tight_layout()
 plt.show()

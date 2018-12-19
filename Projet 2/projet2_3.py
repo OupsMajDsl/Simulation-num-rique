@@ -3,7 +3,7 @@ import unidecode
 
 def ROT13_dict(txt, n = 13, way = 'encrypt'):  
     table         = {letters : index for index, letters in enumerate(' ' + ascii_lowercase, start = 0)}
-    reverse_table = {letters : index for letters, index in enumerate(' ' + ascii_lowercase, start = 0)}
+    reverse_table = {index : letters for index, letters in enumerate(' ' + ascii_lowercase, start = 0)}
     output_string  = ""
     txt = unidecode.unidecode(txt)
     if n > 26 or n < 1:
@@ -16,12 +16,12 @@ def ROT13_dict(txt, n = 13, way = 'encrypt'):
             if char_pos[i] != 0:
                 if way == 'encrypt':
                     char_pos[i] += n
+                    if char_pos[i] > 26:
+                        char_pos[i] -= 26
                 elif way == 'decrypt':
                     char_pos[i] -= n
                     if char_pos[i] < 0:
                         char_pos[i] += 26
-                if char_pos[i] > 26:
-                    char_pos[i] -= 26
         nb_pos  = [reverse_table[number] for number in char_pos if number in reverse_table]
         for i in range(len(char_pos)):    
             output_string += str(nb_pos[i])
@@ -39,7 +39,7 @@ def ROT13_ascii(txt, n = 13, way = 'encrypt'):
     else:
         for i in range(len(txt)):
             char = ord(txt[i].lower())
-            if char != 32:                  #gestion des espaces
+            if char != 32:                  #gestion des espaces (code ascii du caractère ' ' --> 32)
                 if way == 'encrypt':
                     char += n
                 elif way == 'decrypt':
